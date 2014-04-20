@@ -14,5 +14,5 @@ function doSign() {
 +"dqRh3rcNvpY6BKJqFapda1DjdcncZECMizT/GMrc1w==");
   
   var hSig = rsa.signString(document.arquivo.value, "sha1");
-  document.siggenerated.value = linebrk(hSig, 64);
+  document.sign.value = linebrk(hSig, 64);
 }
