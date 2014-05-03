@@ -1,4 +1,48 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    
+    
+    <script>
+    
+ 
+    //recebe um arquivo e retorna um array de bytes.
+function file2ab(file) {
+           // Only read the start of the file
+    var reader = new FileReader();     // Create an asynchronous FileReader
+    reader.readAsArrayBuffer(file);   // Read the slice of the file
+    reader.onload = function(e) {
+        var buffer = reader.result;           // The result ArrayBuffer
+        var view = new DataView(buffer);      // Get access to the result bytes
+        var magic = view.getUint8(0, false); // Read 4 bytes, big-endian 
+        var numint = new Int8Array(buffer);
+        
+        return numint;
+        //console.log(numint);
+        //return numint;
+    };
+}
+</script>
+    
+  </head>
+  
+  
+
+  <body>
+    <input type="file" onchange="typefile(this.files[0])"/>
+    
+  </body>
+
+</html>
+
+
+
+
+
+<!--<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
@@ -12,7 +56,7 @@
 		<script language="JavaScript" type="text/javascript" src="rsa2.js"></script>
 		<script language="JavaScript" type="text/javascript" src="base64.js"></script>
 
-		<!-- for crypto.js -->
+		
 		<script src="http://yui.yahooapis.com/2.9.0/build/yahoo/yahoo-min.js"></script>
 		<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/components/core.js"></script>
 		<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/components/md5.js"></script>
@@ -56,7 +100,7 @@ dqRh3rcNvpY6BKJqFapda1DjdcncZECMizT/GMrc1w==
 		<input type="button" name="assina" value="assina" onclick="assina();"/>
 		<textarea name="siggenerated" rows="4" cols="65"></textarea>
 		
-		-->
+		
 		
 		
 
@@ -157,3 +201,4 @@ LyhP+OoOTmETMegAVQMq71choVJyOFE5BtQa6M/lCHEOya5QUfoRF2HF9EjRF44K
 
 	</body>
 </html>
+-->
