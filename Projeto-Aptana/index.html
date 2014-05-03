@@ -9,6 +9,11 @@
     <script>
     
  
+ //recebe um array de bytes e retorna uma string.
+    function ab2str(buf) {
+       return String.fromCharCode.apply(null, new Int8Array(buf));
+     }
+ 
     //recebe um arquivo e retorna um array de bytes.
 function file2ab(file) {
            // Only read the start of the file
