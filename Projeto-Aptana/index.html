@@ -8,6 +8,18 @@
     
     <script>
     
+    
+    //recebe um array de bytes e retorna uma string hexadecimal.
+    function ba2hex(Int8Array){
+    	
+    	var tam = Int8Array.length;
+        var saida = "";
+        
+        for(var i=0; i<tam; i++){
+        saida += Int8Array[i].toString(16);
+      }
+    	return saida;
+    }
  
  //recebe um array de bytes e retorna uma string.
     function ab2str(buf) {
