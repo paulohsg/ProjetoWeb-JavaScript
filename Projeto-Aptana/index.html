@@ -38,13 +38,17 @@
     	
     	var sig = new KJUR.crypto.Signature({"alg": "SHA1withRSA", "prov": "cryptojs/jsrsa"});
     	var rsaPrivateKey = new RSAKey();
-    	rsaPrivateKey.readPrivateKeyFromPEMString(document.form1.prvkey1.value);
-		sig.initSign(rsaPrivateKey);
-		sig.updateHex('5f6de0');
+    	rsaPrivateKey.readPrivateKeyFromPEMString(document.getElementById("chavepriv").value);
+		sig.init(rsaPrivateKey);
+		sig.updateHex(stringHex);
 		var sigValueHex = sig.sign();
 		
-		return sigValueHex;
-    	
+		//return sigValueHex;
+    	document.getElementById("arqassinado").value = "asdfdfsaf";
+    }
+    
+    function teste(){
+    	document.getElementById("arqassinado").value = "sigValueHex";
     }
     
     //recebe um array de bytes e retorna uma string hexadecimal.
@@ -124,14 +128,9 @@ function file2hex(file) {
     	
     
     
-    <form name="form1">
-<table border="0">
-<tr><th>Signer</th><th></th><th>Verifier</th></tr>
+    
 
-<tr>
-<td>
-PEM RSA Private Key<br/>
-<textarea name="prvkey1" rows="10" cols="65">
+<textarea id="chavepriv" name="prvkey1" rows="10" cols="65">
 -----BEGIN RSA PRIVATE KEY-----
 MIICWwIBAAKBgQDRhGF7X4A0ZVlEg594WmODVVUIiiPQs04aLmvfg8SborHss5gQ
 Xu0aIdUT6nb5rTh5hD2yfpF2WIW6M8z0WxRhwicgXwi80H1aLPf6lEPPLvN29EhQ
@@ -149,14 +148,15 @@ dqRh3rcNvpY6BKJqFapda1DjdcncZECMizT/GMrc1w==
 -----END RSA PRIVATE KEY-----
 </textarea><br/>
 
-<textarea name="arquivoBytes" rows="10" cols="65">
+<textarea id="arqab" name="arquivoab" rows="10" cols="65">
 	
 	</textarea>
 
-</td>
-</tr>
-</table>
-</form>
+<textarea id="arqassinado" name="assinatura" rows="10" cols="65">
+	
+	</textarea>
+	
+	<button id="botaoAssina" onclick="doSign()" type="button" >assina</button>
     
   </body>
 
