@@ -34,7 +34,18 @@
     
     <script>
     
-    
+    function doSign(){
+    	
+    	var sig = new KJUR.crypto.Signature({"alg": "SHA1withRSA", "prov": "cryptojs/jsrsa"});
+    	var rsaPrivateKey = new RSAKey();
+    	rsaPrivateKey.readPrivateKeyFromPEMString(document.form1.prvkey1.value);
+		sig.initSign(rsaPrivateKey);
+		sig.updateHex('5f6de0');
+		var sigValueHex = sig.sign();
+		
+		return sigValueHex;
+    	
+    }
     
     //recebe um array de bytes e retorna uma string hexadecimal.
     function ba2hex(Int8Array){
