@@ -310,11 +310,23 @@ function file2hex(file) {
     };
 }
 
+function teste(){
+console.log(1513212313);
+}
 
 </script>
 
   <body>
-    <input type="file" onchange="file2hex(this.files[0])"/>
+  
+  <div id="pai">
+	
+	<div id="botao">
+	<a class="but" id="botaoTeste" onclick="teste()">Gerar par de chaves</a>
+	</div>
+	
+	<div id="resto">
+	
+	  <input type="file" onchange="file2hex(this.files[0])"/>
     
     
     	
@@ -341,6 +353,8 @@ function file2hex(file) {
 	<button id="botaoAssina" onclick="assina()" type="button" >Assina</button>
 	<button id="botaoVerifica" onclick="verificaAssinatura()" type="button" >Verificar assinatura</button>
 	
+	
+	
 	<select id="valorCurva" name="curva">
 <option value="secp256r1">secp256r1 (= NIST P-256, P-256, prime256v1)
 <option value="secp256k1">secp256k1
@@ -351,6 +365,12 @@ function file2hex(file) {
 <option value="SHA256withECDSA">SHA256withECDSA
 <option value="SHA1withECDSA">SHA1withECDSA
 </select>
+	
+	</div>
+	
+	</div>
+  
+  
 	
     
   </body>

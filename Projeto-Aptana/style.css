@@ -1,1 +1,32 @@
 @CHARSET "ISO-8859-1";
+
+.but{
+font:bold 20px "Courier New", Courier;
+font-style:normal;
+color:#ffffff;
+background:#0d6197;
+border:0px outset #4a3a00;
+text-shadow:0px 6px 8px #0d0d0d;
+box-shadow:-2px 6px 12px #2e2300;
+-moz-box-shadow:-2px 6px 12px #2e2300;
+-webkit-box-shadow:-2px 6px 12px #2e2300;
+border-radius:15px 15px 15px 15px;
+-moz-border-radius:15px 15px 15px 15px;
+-webkit-border-radius:15px 15px 15px 15px;
+width:228px;
+padding:13px 90px;
+cursor:pointer;
+margin:0 auto;
+}
+#botaoTeste:active{
+cursor:pointer;
+position:relative;
+top:2px;
+}
+
+
+#botao{
+position:absolute;
+top:50px;
+left:50px;
+}
