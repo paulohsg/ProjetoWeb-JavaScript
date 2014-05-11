@@ -320,51 +320,56 @@ console.log(1513212313);
   
   <div id="pai">
 	
-	<div id="botao">
-	<a class="but" id="botaoTeste" onclick="teste()">Gerar par de chaves</a>
-	</div>
+	<div id="divAssina">
+		
+		
+	<a class="but" id="botaoAssinaIni" onclick="teste()">Assinar arquivo</a>
 	
-	<div id="resto">
+	<a class="but" id="botaoGeraChaves" onclick="teste()">Gerar par de chaves</a>
 	
-	  <input type="file" onchange="file2hex(this.files[0])"/>
-    
-    
-    	
-    	
-    	
-    
-    <textarea id="pubKey" name="publicKey" rows="10" cols="65">
-	
-	</textarea>
-    
-
-
-
-<textarea id="arqAss" name="arquivoAssinado" rows="10" cols="65">
-	
-	</textarea>
-
-
-	
-	
-	<!--<button id="botaoVerifica" onclick="verifica()" type="button" >assina</button>-->
-	
-	<button id="botaoGeraChaves" onclick="gera()" type="button" >Gerar chaves</button>
-	<button id="botaoAssina" onclick="assina()" type="button" >Assina</button>
-	<button id="botaoVerifica" onclick="verificaAssinatura()" type="button" >Verificar assinatura</button>
-	
-	
+	<p id="txtGenKey">Par de chaves gerado!</p> 
 	
 	<select id="valorCurva" name="curva">
 <option value="secp256r1">secp256r1 (= NIST P-256, P-256, prime256v1)
 <option value="secp256k1">secp256k1
 <option value="secp384r1">secp384r1 (= NIST P-384, P-384)
 </select>
-
-<select id="algAss" name="algoritmoAssinatura">
+	
+	<select id="algAss" name="algoritmoAssinatura">
 <option value="SHA256withECDSA">SHA256withECDSA
 <option value="SHA1withECDSA">SHA1withECDSA
 </select>
+
+<input id="selArq" type="file" onchange="file2hex(this.files[0])"/>
+
+	  <p id="txtPubKey">Chave pública:</p> 
+      <textarea id="pubKey" name="publicKey" rows="1" cols="70">
+      	
+      </textarea>
+      
+      
+      
+      
+      
+	  <button id="botaoAssina" onclick="assina()" type="button" >Assina</button>
+	
+	</div>
+	
+	<div id="divVerifica">
+	
+	  
+	  <textarea id="arqAss" name="arquivoAssinado" rows="10" cols="65"></textarea>
+
+	  <!--<button id="botaoVerifica" onclick="verifica()" type="button" >assina</button>-->
+	
+	  
+	  <button id="botaoVerifica" onclick="verificaAssinatura()" type="button" >Verificar assinatura</button>
+	
+	
+	
+	
+
+
 	
 	</div>
 	
