@@ -1,4 +1,5 @@
 /*! (c) Tom Wu | http://www-cs-students.stanford.edu/~tjw/jsbn/
+
  */
 // Depends on rsa.js and jsbn2.js
 
@@ -76,7 +77,7 @@ function oaep_unpad(d, n, hash)
         throw "Cipher too short";
     }
 
-    var maskedSeed = d.substr(1, SHA1_SIZE)
+    var maskedSeed = d.substr(1, SHA1_SIZE);
     var maskedDB = d.substr(SHA1_SIZE + 1);
 
     var seedMask = oaep_mgf1_str(maskedDB, SHA1_SIZE, hash || rstr_sha1);
