@@ -249,12 +249,12 @@ $(document).ready(function(){
 
 $(document).ready(function(){
   $("#botaoGeraChaves").click(function(){
-    $("#txtGenKey").fadeIn("slow");
-    $("#pubKey").fadeIn("slow");
-    $("#selArq").fadeIn("slow");
-    $("#botaoAssina").fadeIn("slow");
-    $("#txtPubKey").fadeIn("slow");
-    $("#txtSelArq").fadeIn("slow");
+    $("#txtGenKey").fadeIn(1000);
+    $("#pubKey").fadeIn(5000);
+    $("#selArq").fadeIn(5000);
+    $("#botaoAssina").fadeIn(5000);
+    $("#txtPubKey").fadeIn(5000);
+    $("#txtSelArq").fadeIn(5000);
     
   });
 });
@@ -305,7 +305,7 @@ $(document).ready(function(){
 	
 	<a class="but" id="botaoGeraChaves" onclick="geraParChaves()">Gerar par de chaves</a>
 	
-	<p id="txtCurvaAlg">Selecione o valor da curva e em seguida o algoritmo que será usado para gerar as chaves</p>
+	<p id="txtCurvaAlg">Selecione o valor da curva e o algoritmo que será usado para gerar as chaves</p>
 	<p id="txtGenKey">Par de chaves gerado!</p>
 	
 	
